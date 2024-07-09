@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New tab</title>
+    <style>
+        #logo {
+            height: 200px;
+            background: url(images/google_logo.svg) no-repeat;
+            margin-top: 120px;
+            margin-bottom: -57px;
+            background-position: center;
+
+        }
+
+        #input {
+            outline: none;
+            border: none;
+            height: 23px;
+            font-family: sans-serif;
+            width: 470px;
+            text-wrap: nowrap;
+            font-size: 17px;
+            resize: none;
+            overflow: hidden;
+            margin-bottom: 10px;
+            text-overflow: ellipsis;
+        }
+
+        .inputwrapper {
+            border-radius: 26px;
+            outline: none;
+            border: 0.2px solid #e2d6d6;
+            height: 27px;
+
+            width: 550px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            box-shadow: 0px 0px 8px #c1b9b9;
+            position: relative;
+            background-image: url(search_cr23.svg);
+            background-size: 19px 45px;
+            background-repeat: no-repeat;
+            background-position-x: 16px;
+            padding-left: 43px;
+            padding-top: 14px;
+        }
+
+        #search {
+            position: relative;
+
+        }
+
+        #outerin {
+            /* height: 500px;
+            width: 100px; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        #imgwrapper {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+        }
+
+        #circles {
+            height: 100px;
+            width: 500px;
+
+            display: block;
+            margin: auto;
+
+        }
+
+        #scircles {
+            height: 100px;
+            width: 500px;
+            /*  border: solid blue; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .same {
+            height: 100px;
+            width: 100px;
+
+            border-radius: 8px;
+            display: flex;
+            cursor: pointer;
+
+        }
+
+        .same:hover {
+            background-color: rgba(108, 107, 105, 0.114);
+        }
+
+        .circle {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            background-color: rgba(197, 192, 192, 0.39);
+            display: block;
+            margin: auto;
+        }
+
+        .incircle {
+            height: 23px;
+            width: 23px;
+
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+            margin-top: 11px;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+        #incircle {
+            background-image: url('share_unfilled.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+
+        #incircleth {
+            font-size: 26px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #incirclet {
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 200;
+            background-color: #0909d7;
+            color: white;
+            font-size: 12px;
+
+        }
+
+        #circleth {
+            background-color: #c8d5f4;
+        }
+
+        #btn {
+            width: 170px;
+            background-color: #c0d7fda2;
+            height: 33px;
+            align-items: center;
+            display: flex;
+            border: none;
+            border-radius: 19px;
+            box-shadow: 0px 2px 2px #c9c9c9;
+            cursor: pointer;
+            font-weight: 300;
+            font-family: sans-serif;
+        }
+
+        #btn:hover {
+            background-color: #afc5e7ae;
+        }
+
+        #btnwrapper {
+            float: right;
+            position: relative;
+            top: 60px;
+        }
+        .onewrapper {
+            height: 25px;
+            width: 411px;
+            cursor: pointer;
+            float: right;
+            position: relative;
+            bottom: 37px;
+        }
+
+        #one {
+            cursor: pointer;
+            background-image: url('mic.svg');
+            height: 25px;
+            width: 37px;
+            float: left;
+            background-repeat: no-repeat;
+
+            position: relative;
+            background-size: 25px;
+
+
+
+        }
+
+        #two {
+            height: 25px;
+            width: 29px;
+            background-image: url('camera.svg');
+            background-repeat: no-repeat;
+            float: left;
+            position: relative;
+            background-size: 25px;
+
+        }
+
+        @media (min-width:1500px) and (max-width:1550px) {
+            .onewrapper {
+                width: 540px;
+            }
+
+        
+        }
+        @media (min-width:1550px) and (max-width:1700px) {
+            .onewrapper {
+                width: 590px;
+            }
+
+          
+        }
+
+        @media (min-width:1400px) and (max-width:1500px) {
+            .onewrapper {
+                width: 510px;
+            }
+        }
+
+        @media (min-width:1300px) and (max-width:1400px) {
+            .onewrapper {
+                width: 458px;
+            }
+
+            #input {
+                width: 315px;
+            }
+        }
+
+        @media (min-width:1115px) and (max-width:1215px) {
+            .onewrapper {
+                width: 366px;
+            }
+
+            #input {
+                width: 457px;
+            }
+        }
+
+        @media (min-width:950px) and (max-width:1115px) {
+            .onewrapper {
+                width: 302px;
+            }
+
+            #input {
+                width: 413px;
+            }
+        }
+
+        @media (min-width:850px) and (max-width:950px) {
+            .onewrapper {
+                width: 232px;
+
+            }
+
+            #input {
+                width: 440px;
+            }
+        }
+
+        @media (min-width:750px) and (max-width:850px) {
+            .onewrapper {
+                width: 186px;
+
+            }
+
+            #input {
+                width: 430px;
+            }
+        }
+
+        @media (min-width:650px) and (max-width:750px) {
+            .onewrapper {
+                width: 135px;
+
+            }
+
+            #input {
+                width: 425px;
+            }
+        }
+
+        @media (min-width:560px) and (max-width:650px) {
+            .onewrapper {
+                width: 108px;
+
+            }
+
+            #input {
+                width: 390px;
+            }
+
+            .inputwrapper {
+                width: 500px;
+            }
+        }
+
+        @media (min-width:480px) and (max-width:560px) {
+            .onewrapper {
+                width: 122px;
+
+            }
+
+            #input {
+                width: 275px;
+            }
+
+            .inputwrapper {
+                width: 390px;
+            }
+
+            #input {
+                width: 286px;
+            }
+            
+        }
+
+        @media (min-width:380px) and (max-width:480px) {
+            .onewrapper {
+                width: 110px;
+
+            }
+
+            #input {
+                width: 365px;
+            }
+
+            #input {
+                width: 235px;
+            }
+
+            .inputwrapper {
+                width: 315px;
+            }
+            #scircles{
+                width: 438px;
+            }
+        }
+
+        @media (min-width:180px) and (max-width:380px) {
+            .onewrapper {
+                width: 90px;
+
+            }
+
+            #input {
+                width: 365px;
+            }
+
+            #input {
+                width: 235px;
+            }
+
+            .inputwrapper {
+                width: 315px;
+            }
+            #scircles{
+                width: 398px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo"></div>
+    <div id="outerin">
+        <div class="inputwrapper">
+            <textarea name="text" id="input" placeholder="Search google or type a URL"></textarea>
+        </div>
+        <div class="outerwrapper">
+            <div class="onewrapper">
+                <div id="one" class="onee"></div>
+                <div id="two" class="two"></div>
+            </div>
+        </div>
+    </div>
+    <div id="circles">
+        <div id="scircles">
+            <div class="one same">
+                <div id="circle" class="circle">
+                    <div id="incircle" class="incircle"></div>
+                </div>
+            </div>
+            <div class="two same">
+                <div id="circlet" class="circle">
+                    <div id="incirclet" class="incircle">IP</div>
+                </div>
+            </div>
+            <div class="three same">
+                <div id="circleth" class="circle">
+                    <div id="incircleth" class="incircle">+</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="btnwrapper">
+        <button id="btn"><img src="images/icon_pencil.svg" alt="">Customize Chrome</button>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>
